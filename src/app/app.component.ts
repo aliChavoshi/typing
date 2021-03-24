@@ -8,8 +8,15 @@ import { lorem } from "faker";
 })
 export class AppComponent {
   randomText : string=lorem.sentence();
-  
+  inputText='';
+
   onChangeInput(value:string){
-    console.log(value);
+    this.inputText = value;
+  }
+  compare(letterRandom:string,letterEnter:string) : string{
+    if (!letterEnter) {
+      return 'pending';
+    }
+    return letterEnter === letterRandom ? 'correct' : 'incorrect';
   }
 }
