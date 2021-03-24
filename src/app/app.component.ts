@@ -7,5 +7,9 @@ import { lorem } from "faker";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'typing';
+  randomText : string=lorem.sentence();
+  
+  onChangeInput(value:string){
+    console.log(value);
+  }
 }
